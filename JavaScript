@@ -1,4 +1,4 @@
-//Reverse every Word
+//1.)Reverse every Word
 function reverseWords(sentence) {
     let words = sentence.split(' ');
     let reversedWords = words.map(word => reverseWord(word));
@@ -12,3 +12,15 @@ function reverseWord(word) {
 const inputSentence = "Hello world";
 const reversedSentence = reverseWords(inputSentence);
 console.log(reversedSentence);
+
+
+//..........................................................
+//2.)Sorting Array
+// Sample array to sort
+const numbers = [5, 2, 9, 1, 5, 6];
+
+// Sorting in descending order
+numbers.sort((a, b) => b - a);
+
+// Display the sorted array
+console.log(numbers);
