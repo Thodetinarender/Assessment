@@ -1,4 +1,70 @@
 
+// Roman to Integer
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class RomanToInteger {
+    public static void main(String[] args) {
+      Scanner scan=new Scanner(System.in);
+      String roman=scan.nextLine();
+        int result = romanToInteger(roman);
+        System.out.println("Integer equivalent of " + roman + " is " + result);
+    }
+
+    public static int romanToInteger(String s) {
+        HashMap<Character, Integer> romanValues = new HashMap<>();
+        romanValues.put('I', 1);
+        romanValues.put('V', 5);
+        romanValues.put('X', 10);
+        romanValues.put('L', 50);
+        romanValues.put('C', 100);
+        romanValues.put('D', 500);
+        romanValues.put('M', 1000);
+
+        int result = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            if (i < s.length() - 1 && romanValues.get(s.charAt(i)) < romanValues.get(s.charAt(i + 1))) {
+                result -= romanValues.get(s.charAt(i));
+            } else {
+                result += romanValues.get(s.charAt(i));
+            }
+        }
+
+        return result;
+    }
+}
+
+
+//ShuffleArray
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class ShuffleArray {
+    public static void main(String[] args) {
+        // Create an ArrayList with the values (1, 2, 3, 4, 5, 6, 7)
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        arrayList.add(1);
+        arrayList.add(2);
+        arrayList.add(3);
+        arrayList.add(4);
+        arrayList.add(5);
+        arrayList.add(6);
+        arrayList.add(7);
+
+        // Shuffle the ArrayList
+        Collections.shuffle(arrayList);
+
+        // Convert the shuffled ArrayList back to an array
+        Integer[] shuffledArray = arrayList.toArray(new Integer[0]);
+
+        // Print the shuffled array
+        for (Integer value : shuffledArray) {
+            System.out.print(value + " ");
+        }
+    }
+}
+
 //Check Pangram or not
 import java.util.Scanner;
 
